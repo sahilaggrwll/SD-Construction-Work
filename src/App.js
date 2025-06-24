@@ -155,8 +155,13 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <button className="btn-primary">Our Projects</button>
-            <button className="btn-secondary">Get Quote</button>
+            <a href="#projects">
+              <button className="btn-primary">Our Projects</button>
+            </a>
+            <a href="#contact">
+              <button className="btn-secondary">Get Quote</button>
+            </a>
+
           </motion.div>
         </div>
         <div className="hero-image">
