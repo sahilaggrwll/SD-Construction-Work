@@ -94,8 +94,8 @@ function App() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <img src="/logo.png" alt="SD Construction Works Logo" className="logo-icon" />
-            <img src="/text.png" alt="SD Construction Works Text" className="logo-text" />
+            <img src={process.env.PUBLIC_URL + "/logo.png"} alt="SD Construction Works Logo" className="logo-icon" />
+            <img src={process.env.PUBLIC_URL + "/text.png"} alt="SD Construction Works Text" className="logo-text" />
           </motion.div>
           
           <div className="nav-menu">
@@ -440,7 +440,8 @@ function App() {
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-logo">
-                <img src="/text.png" alt="SD Construction Works Text" className="logo-text" />
+                <img src={process.env.PUBLIC_URL + "/logo.png"} alt="SD Construction Works Logo" />
+                <img src={process.env.PUBLIC_URL + "/text.png"} alt="SD Construction Works Text" className="logo-text" />
               </div>
               <p>Building excellence, delivering results, and creating lasting value for our clients and communities.</p>
             </div>
