@@ -17,7 +17,8 @@ import {
   FaLinkedin,
   FaTwitter,
   FaFacebook,
-  FaClock
+  FaClock,
+  FaMobile
 } from 'react-icons/fa';
 import './App.css';
 
@@ -36,43 +37,44 @@ function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const services = [
-    { icon: <FaBuilding />, title: "Commercial Construction", description: "State-of-the-art commercial buildings and office complexes" },
-    { icon: <FaIndustry />, title: "Industrial Projects", description: "Heavy industrial facilities and manufacturing plants" },
-    { icon: <FaRoad />, title: "Infrastructure Development", description: "Roads, bridges, and transportation systems" },
-    { icon: <FaHardHat />, title: "Renovation & Maintenance", description: "Building renovations and ongoing maintenance services" }
+    { icon: <FaBuilding />, title: "Commercial Electrical", description: "Complete electrical solutions for commercial buildings and offices" },
+    { icon: <FaIndustry />, title: "Industrial Electrical", description: "Heavy electrical systems for industrial facilities and factories" },
+    { icon: <FaRoad />, title: "Electrical Infrastructure", description: "Power distribution, transformers, and electrical infrastructure" },
+    { icon: <FaHardHat />, title: "Maintenance & Repair", description: "Electrical maintenance, repairs, and emergency services" }
   ];
 
   const projects = [
-    { name: "Downtown Business Center", type: "Commercial", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" },
-    { name: "Industrial Manufacturing Plant", type: "Industrial", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400" },
-    { name: "Highway Bridge Project", type: "Infrastructure", image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400" },
-    { name: "Residential Complex", type: "Residential", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400" }
+    { name: "City Center Mall Electrical", type: "Commercial", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" },
+    { name: "Factory Power System", type: "Industrial", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400" },
+    { name: "Substation Installation", type: "Infrastructure", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400" },
+    { name: "Residential Wiring", type: "Residential", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" }
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "25+", label: "Years Experience" },
-    { number: "150+", label: "Team Members" },
-    { number: "98%", label: "Client Satisfaction" }
+    { number: "50+", label: "Projects Completed" },
+    { number: "3+", label: "Years Experience" },
+    { number: "25+", label: "Team Members" },
+    { number: "100%", label: "Client Satisfaction" }
   ];
 
   const contactInfo = [
     {
       icon: <FaPhone />,
       title: "Phone",
-      details: "+1 (555) 123-4567",
+      details: "+91 96600 22114",
+      details2: "+91 98878 54588",
       subtitle: "Call us anytime"
     },
     {
       icon: <FaEnvelope />,
       title: "Email",
-      details: "info@sdconstructionworks.com",
+      details: "mysdconstructionwork@gmail.com",
       subtitle: "Send us a message"
     },
     {
       icon: <FaMapMarkerAlt />,
       title: "Office",
-      details: "123 Construction Ave, Building City, BC 12345",
+      details: "1440/26, Ambay Shree Colony, Vigyan Nagar, Adarsh Nagar, Ajmer, Rajasthan, 305001",
       subtitle: "Visit our headquarters"
     },
     {
@@ -110,25 +112,19 @@ function App() {
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </div>
         </div>
-        
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              className="mobile-menu"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <a href="#home" onClick={toggleMenu}>Home</a>
-              <a href="#about" onClick={toggleMenu}>About</a>
-              <a href="#services" onClick={toggleMenu}>Services</a>
-              <a href="#projects" onClick={toggleMenu}>Projects</a>
-              <a href="#contact" onClick={toggleMenu}>Contact</a>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div className="mobile-menu">
+            <a href="#home" onClick={toggleMenu}>Home</a>
+            <a href="#about" onClick={toggleMenu}>About</a>
+            <a href="#services" onClick={toggleMenu}>Services</a>
+            <a href="#projects" onClick={toggleMenu}>Projects</a>
+            <a href="#contact" onClick={toggleMenu}>Contact</a>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section */}
       <section id="home" className="hero">
@@ -138,16 +134,16 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Building Tomorrow's Infrastructure Today
+            Powering Your Future with Reliable Electrical Solutions
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            SD Construction Works is a leading construction company specializing in commercial, 
-            industrial, and infrastructure projects. We deliver excellence through innovation, 
-            quality, and unwavering commitment to safety.
+            SD Construction Works is a trusted electrical contractor specializing in commercial, 
+            industrial, and residential electrical installations. We deliver safe, efficient, 
+            and innovative electrical solutions with the highest standards of quality.
           </motion.p>
           <motion.div 
             className="hero-buttons"
@@ -161,11 +157,10 @@ function App() {
             <a href="#contact">
               <button className="btn-secondary">Get Quote</button>
             </a>
-
           </motion.div>
         </div>
         <div className="hero-image">
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800" alt="Construction Site" />
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800" alt="Electrical Work" />
         </div>
       </section>
 
@@ -199,7 +194,7 @@ function App() {
             viewport={{ once: true }}
           >
             <h2>About SD Construction Works</h2>
-            <p>Delivering excellence in construction for over 25 years</p>
+            <p>Delivering reliable electrical solutions with safety and innovation</p>
           </motion.div>
           
           <div className="about-content">
@@ -212,18 +207,18 @@ function App() {
             >
               <h3>Our Mission</h3>
               <p>
-                To be the most trusted construction partner, delivering innovative solutions 
-                that exceed expectations while maintaining the highest standards of safety, 
-                quality, and environmental responsibility.
+                To provide exceptional electrical services that power businesses and homes 
+                with innovative, safe, and energy-efficient solutions while maintaining 
+                the highest standards of quality and customer satisfaction.
               </p>
               
               <h3>Our Values</h3>
               <ul>
-                <li><FaCheckCircle /> Safety First - Zero accidents, every day</li>
-                <li><FaCheckCircle /> Quality Excellence - Superior craftsmanship in every project</li>
-                <li><FaCheckCircle /> Innovation - Embracing new technologies and methods</li>
-                <li><FaCheckCircle /> Integrity - Honest, transparent, and ethical business practices</li>
-                <li><FaCheckCircle /> Sustainability - Building for future generations</li>
+                <li><FaCheckCircle /> Safety First - Zero electrical accidents, every project</li>
+                <li><FaCheckCircle /> Quality Excellence - Superior electrical workmanship</li>
+                <li><FaCheckCircle /> Innovation - Latest electrical technologies and methods</li>
+                <li><FaCheckCircle /> Integrity - Honest, transparent, and ethical practices</li>
+                <li><FaCheckCircle /> Energy Efficiency - Sustainable electrical solutions</li>
               </ul>
             </motion.div>
             
@@ -234,7 +229,7 @@ function App() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" alt="Construction Team" />
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600" alt="Electrical Team" />
             </motion.div>
           </div>
         </div>
@@ -251,7 +246,7 @@ function App() {
             viewport={{ once: true }}
           >
             <h2>Our Services</h2>
-            <p>Comprehensive construction solutions for every need</p>
+            <p>Comprehensive electrical solutions for every need</p>
           </motion.div>
           
           <div className="services-grid">
@@ -318,7 +313,7 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Team Section */}
       <section className="testimonials">
         <div className="container">
           <motion.div 
@@ -328,8 +323,8 @@ function App() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2>What Our Clients Say</h2>
-            <p>Trusted by leading companies worldwide</p>
+            <h2>Meet Our Team</h2>
+            <p>Meet the experts behind SD Construction Works</p>
           </motion.div>
           
           <div className="testimonials-grid">
@@ -340,13 +335,16 @@ function App() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="stars">
-                <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+              <div className="team-photo">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Sushant Saxena" />
               </div>
-              <p>"SD Construction Works delivered our project on time and under budget. Their attention to detail and commitment to quality is unmatched."</p>
-              <div className="testimonial-author">
-                <h4>John Smith</h4>
-                <span>CEO, TechCorp Industries</span>
+              <h3>Sushant Saxena</h3>
+              <span className="team-role">Founder</span>
+              <p>With over 8 years of experience in electrical contracting, Sushant leads our company with vision and expertise. His commitment to quality and safety drives every project we undertake.</p>
+              <div className="team-expertise">
+                <span>Electrical Design</span>
+                <span>Project Management</span>
+                <span>Safety Standards</span>
               </div>
             </motion.div>
             
@@ -357,13 +355,16 @@ function App() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="stars">
-                <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+              <div className="team-photo">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Sahil Aggarwal" />
               </div>
-              <p>"The team at SD Construction Works is professional, skilled, and reliable. They transformed our vision into reality with exceptional results."</p>
-              <div className="testimonial-author">
-                <h4>Sarah Johnson</h4>
-                <span>Project Manager, Global Development</span>
+              <h3>John Lark</h3>
+              <span className="team-role">CTO</span>
+              <p>As our Chief Technical Officer, John brings innovative electrical solutions and cutting-edge technology to every project. His expertise ensures we stay ahead of industry standards.</p>
+              <div className="team-expertise">
+                <span>Technical Innovation</span>
+                <span>System Integration</span>
+                <span>Quality Control</span>
               </div>
             </motion.div>
           </div>
@@ -381,7 +382,7 @@ function App() {
             viewport={{ once: true }}
           >
             <h2>Get In Touch</h2>
-            <p>Ready to start your next construction project?</p>
+            <p>Ready to start your next electrical project?</p>
           </motion.div>
           
           <div className="contact-grid">
@@ -401,6 +402,7 @@ function App() {
                 <div className="contact-details">
                   <h3>{info.title}</h3>
                   <p className="contact-main">{info.details}</p>
+                  <p className="contact-main">{info.details2}</p>
                   <p className="contact-subtitle">{info.subtitle}</p>
                 </div>
               </motion.div>
@@ -440,7 +442,6 @@ function App() {
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-logo">
-                <img src={process.env.PUBLIC_URL + "/logo.png"} alt="SD Construction Works Logo" />
                 <img src={process.env.PUBLIC_URL + "/text.png"} alt="SD Construction Works Text" className="logo-text" />
               </div>
               <p>Building excellence, delivering results, and creating lasting value for our clients and communities.</p>
@@ -457,22 +458,25 @@ function App() {
             
             <div className="footer-section">
               <h4>Services</h4>
-              <a href="#services">Commercial Construction</a>
-              <a href="#services">Industrial Projects</a>
-              <a href="#services">Infrastructure Development</a>
-              <a href="#services">Renovation & Maintenance</a>
+              <a href="#services">Commercial Electrical</a>
+              <a href="#services">Industrial Electrical</a>
+              <a href="#services">Electrical Infrastructure</a>
+              <a href="#services">Maintenance & Repair</a>
             </div>
             
             <div className="footer-section">
               <h4>Contact Info</h4>
-              <p><FaPhone /> +1 (555) 123-4567</p>
-              <p><FaEnvelope /> info@sdconstructionworks.com</p>
-              <p><FaMapMarkerAlt /> 123 Construction Ave, Building City, BC 12345</p>
+              <div>
+                <p><FaPhone /> +91 96600 22114</p>
+                <p><FaMobile /> +91 98878 54588</p>
+              </div>
+              <p><FaEnvelope /> mysdconstructionwork@gmail.com</p>
+              <p><FaMapMarkerAlt /> 1440/26, Ambay Shree Colony, Vigyan Nagar, Adarsh Nagar, Ajmer, Rajasthan, 305001</p>
             </div>
           </div>
           
           <div className="footer-bottom">
-            <p>&copy; 2024 SD Construction Works. All rights reserved.</p>
+            <p>&copy; 2025 SD Construction Works. All rights reserved.</p>
           </div>
         </div>
       </footer>
