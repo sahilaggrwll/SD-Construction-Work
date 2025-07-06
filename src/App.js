@@ -44,16 +44,12 @@ function App() {
   ];
 
   const projects = [
-    { name: "City Center Mall Electrical", type: "Commercial", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" },
-    { name: "Factory Power System", type: "Industrial", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400" },
-    { name: "Substation Installation", type: "Infrastructure", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400" },
-    { name: "Residential Wiring", type: "Residential", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" }
+    { name: "OHE Work for Indian Railways", type: "Railway Infrastructure", image: process.env.PUBLIC_URL + "/Project.jpeg" }
   ];
 
   const stats = [
-    { number: "50+", label: "Projects Completed" },
     { number: "3+", label: "Years Experience" },
-    { number: "25+", label: "Team Members" },
+    { number: "10+", label: "Team Members" },
     { number: "100%", label: "Client Satisfaction" }
   ];
 
@@ -175,9 +171,17 @@ function App() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.05 }}
             >
-              <h3>{stat.number}</h3>
-              <p>{stat.label}</p>
+              <div className="stat-icon">
+                {index === 0 && <FaClock />}
+                {index === 1 && <FaUsers />}
+                {index === 2 && <FaStar />}
+              </div>
+              <div className="stat-content">
+                <h3>{stat.number}</h3>
+                <p>{stat.label}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -263,9 +267,6 @@ function App() {
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <button className="btn-outline">
-                  Learn More <FaArrowRight />
-                </button>
               </motion.div>
             ))}
           </div>
@@ -305,7 +306,7 @@ function App() {
                 </div>
                 <div className="project-info">
                   <h3>{project.name}</h3>
-                  <p>Completed in 2024</p>
+                  <p>Completed in 2025</p>
                 </div>
               </motion.div>
             ))}
@@ -335,12 +336,27 @@ function App() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="team-photo">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Sushant Saxena" />
-              </div>
               <h3>Sushant Saxena</h3>
               <span className="team-role">Founder</span>
-              <p>With over 8 years of experience in electrical contracting, Sushant leads our company with vision and expertise. His commitment to quality and safety drives every project we undertake.</p>
+              <p>Mr. Sushant Saxena is an accomplished professional with diverse experience spanning the engineering industries. Known for his hands-on approach to project execution and cross-disciplinary coordination, he has contributed to the successful delivery of infrastructure, construction, and utility projects across various sectors.</p>
+              <div className="team-expertise">
+                <span>Electrical Engineering</span>
+                <span>Project Management</span>
+                <span>Safety Standards</span>
+                <span>Electrical Design</span>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="testimonial-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3>Dinesh Saxena</h3>
+              <span className="team-role">Co-Founder</span>
+              <p>Mr. Dinesh Saxena's objective is to remain dedicated to building and developing diverse, capable teams that can deliver effective, forward-thinking solutions to complex engineering and operational challenges faced by organizations and communities.</p>
               <div className="team-expertise">
                 <span>Electrical Design</span>
                 <span>Project Management</span>
@@ -352,19 +368,16 @@ function App() {
               className="testimonial-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="team-photo">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300" alt="Sahil Aggarwal" />
-              </div>
-              <h3>John Lark</h3>
-              <span className="team-role">CTO</span>
-              <p>As our Chief Technical Officer, John brings innovative electrical solutions and cutting-edge technology to every project. His expertise ensures we stay ahead of industry standards.</p>
+              <h3>Sahil Aggarwal</h3>
+              <span className="team-role">Vice President</span>
+              <p>As our Vice President with a strong background in Computer Science, Sahil brings cutting-edge technical expertise to SD Construction Works. His deep understanding of software systems, automation, and digital solutions enables us to implement innovative electrical technologies and smart building solutions.</p>
               <div className="team-expertise">
+                <span>Computer Science</span>
                 <span>Technical Innovation</span>
-                <span>System Integration</span>
-                <span>Quality Control</span>
+                <span>Smart Systems</span>
               </div>
             </motion.div>
           </div>
@@ -417,19 +430,11 @@ function App() {
             viewport={{ once: true }}
           >
             <h3>Follow Us</h3>
-            <p>Stay connected with us on social media</p>
+            <p>Stay connected with us on LinkedIn</p>
             <div className="social-links">
               <a href="https://www.linkedin.com/company/sd-construction-work" target="_blank" rel="noopener noreferrer" className="social-link">
                 <FaLinkedin />
                 <span>LinkedIn</span>
-              </a>
-              <a href="#" className="social-link">
-                <FaTwitter />
-                <span>Twitter</span>
-              </a>
-              <a href="#" className="social-link">
-                <FaFacebook />
-                <span>Facebook</span>
               </a>
             </div>
           </motion.div>
