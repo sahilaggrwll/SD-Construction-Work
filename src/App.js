@@ -130,17 +130,17 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            SD Construction Work - Leading Electrical Contractors in Ajmer, Rajasthan
+            Powering Your Future with Reliable Electrical Solutions
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            SD Construction Work is a trusted electrical contractor in Ajmer, Rajasthan, 
-            specializing in commercial, industrial, and residential electrical installations. 
-            We deliver safe, efficient, and innovative electrical solutions with the highest 
-            standards of quality. Call +91 96600 22114 for reliable electrical services.
+            We are a premier construction and electrical company, 
+            delivering excellence in commercial, industrial, and residential projects. 
+            With years of expertise and a commitment to innovation, we provide cutting-edge 
+            electrical solutions that power your success with unmatched reliability and quality.
           </motion.p>
           <motion.div 
             className="hero-buttons"
